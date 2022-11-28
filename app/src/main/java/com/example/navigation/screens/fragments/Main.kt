@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.navigation.R
 
 
-class AllNotes : Fragment() {
+class Main : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -16,4 +16,8 @@ class AllNotes : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_allnotes, container, false)
     }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        _binding = null
+//    }
 }

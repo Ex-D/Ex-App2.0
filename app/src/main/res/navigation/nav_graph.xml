@@ -6,38 +6,59 @@
     app:startDestination="@id/register">
 
     <fragment
-        android:id="@+id/login"
-        android:name="com.example.navigation.screens.fragments.Login"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_login_to_main"
-            app:destination="@id/allnote" />
-    </fragment>
-    <fragment
         android:id="@+id/register"
         android:name="com.example.navigation.screens.fragments.Register"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_register_to_login"
-            app:destination="@id/login" />
+            app:destination="@id/login"
+            app:popUpTo="@id/register"
+            />
         <action
-            android:id="@+id/action_register_to_allnote"
-            app:destination="@id/allnote" />
+            android:id="@+id/action_register_to_main"
+            app:destination="@id/main"
+            app:popUpTo="@id/register"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/allnote"
-        android:name="com.example.navigation.screens.fragments.AllNotes"
-        android:label="fragment_allnotes"
+        android:id="@+id/login"
+        android:name="com.example.navigation.screens.fragments.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_main"
+            app:destination="@id/main"
+            app:popUpTo="@id/register"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_resetPassword2"
+            app:destination="@id/resetPassword" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/main"
+        android:name="com.example.navigation.screens.fragments.Main"
+        android:label="fragment_main"
         tools:layout="@layout/fragment_allnotes" >
         <action
-            android:id="@+id/action_allnote_to_note"
-            app:destination="@id/note" />
+            android:id="@+id/action_main_to_note"
+            app:destination="@id/note"
+            app:popUpTo="@id/main"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/note"
         android:name="com.example.navigation.screens.fragments.Note"
         android:label="fragment_note"
         tools:layout="@layout/fragment_note" />
+    <fragment
+        android:id="@+id/resetPassword"
+        android:name="com.example.navigation.screens.fragments.ResetPassword"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_resetPassword_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>
