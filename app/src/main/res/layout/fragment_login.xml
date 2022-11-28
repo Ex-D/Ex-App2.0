@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screens.activities.MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,7 +23,8 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/giftbees"
+            android:src="@drawable/login"
+            android:layout_gravity="center"
             />
 
         <TextView
@@ -45,6 +48,7 @@
                 android:src="@drawable/atrate"
                 />
             <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/LoginMail"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"
@@ -66,80 +70,107 @@
                 android:src="@drawable/vector"
                 />
             <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/LoginPassword"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:inputType="textPassword"
                 android:layout_marginStart="8dp"
                 android:layout_toEndOf="@id/atTheRat"
                 android:textColorHint="#A09898"
                 android:hint="Password"
                 />
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:max="3"
+                android:progress="100"
+                android:visibility="invisible"
+                android:indeterminate="true"
+                android:indeterminateTintMode="src_atop"
+                android:indeterminateTint="@color/black"
+                />
+
         </RelativeLayout>
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ForgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="220dp"
+            android:layout_gravity="right"
             android:layout_marginTop="20dp"
             android:textColor="#0694D6"
             android:textSize="16dp"
             android:text="Forgot Password?"
             />
+
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/LoginBtn"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@drawable/roundcorner"
-            android:layout_marginTop="50dp"
-            android:textSize="32sp"
-            android:elevation="35dp"
-            android:textAllCaps="false"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_design"
             android:gravity="center"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="SUBMIT"
-            />
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <View
-                android:id="@+id/line_left"
-                android:layout_width="160dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="30dp"
-                android:background="@android:color/darker_gray"/>
+            android:elevation="10dp"
+            android:text="Login"
+            android:textColor="@color/theme_button_text"
+            android:fontFamily="@font/lato_black"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+
+<!--            <View-->
+<!--                android:id="@+id/line_left"-->
+<!--                android:layout_width="160dp"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:background="@android:color/darker_gray"/>-->
             <TextView
                 android:id="@+id/or"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textSize="18sp"
+
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="OR"
-                android:layout_toRightOf="@id/line_left"
-                />
-            <View
-                android:id="@+id/line_lef"
-                android:layout_width="160dp"
-                android:layout_height="1dp"
+                android:fontFamily="@font/lato_black"
 
-                android:layout_toRightOf="@+id/or"
-                android:layout_marginTop="30dp"
-                android:background="@android:color/darker_gray"/>
-        </RelativeLayout>
+                />
+<!--                android:layout_toEndOf="@id/line_left"-->
+
+<!--            <View-->
+<!--                android:id="@+id/line_lef"-->
+<!--                android:layout_width="160dp"-->
+<!--                android:layout_height="1dp"-->
+
+<!--                android:layout_toRightOf="@+id/or"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:background="@android:color/darker_gray"/>-->
+
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gSignIn"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/roundlogin"
-            android:elevation="35dp"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_design"
+            android:elevation="10dp"
+            android:fontFamily="@font/lato_black"
             android:gravity="center"
-            android:text="Login With Google"
+            android:text="Login Using Google"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="30sp">
-
-        </androidx.appcompat.widget.AppCompatButton>
+            android:textColor="@color/theme_button_text"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
