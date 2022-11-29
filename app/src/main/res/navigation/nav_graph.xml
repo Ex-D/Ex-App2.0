@@ -14,10 +14,10 @@
             android:id="@+id/action_register_to_login"
             app:destination="@id/login"
             app:popUpTo="@id/register"
-            />
+            app:popUpToInclusive="false" />
         <action
-            android:id="@+id/action_register_to_main"
-            app:destination="@id/main"
+            android:id="@+id/action_register_to_home"
+            app:destination="@id/apphome"
             app:popUpTo="@id/register"
             app:popUpToInclusive="true" />
     </fragment>
@@ -27,24 +27,29 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_login_to_main"
-            app:destination="@id/main"
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/apphome"
             app:popUpTo="@id/register"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true"
+             />
         <action
             android:id="@+id/action_login_to_resetPassword2"
             app:destination="@id/resetPassword" />
     </fragment>
-
     <fragment
-        android:id="@+id/main"
-        android:name="com.example.navigation.screens.fragments.Main"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_allnotes" >
+        android:id="@+id/apphome"
+        android:name="com.example.navigation.screens.fragments.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_main_to_note"
+            android:id="@+id/action_home_to_note"
             app:destination="@id/note"
-            app:popUpTo="@id/main"
+            app:popUpTo="@id/apphome"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_home_to_register"
+            app:destination="@id/register"
+            app:popUpTo="@id/login"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -59,6 +64,8 @@
         tools:layout="@layout/fragment_reset_password" >
         <action
             android:id="@+id/action_resetPassword_to_login"
-            app:destination="@id/login" />
+            app:destination="@id/login"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

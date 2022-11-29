@@ -67,7 +67,7 @@ class Register : Fragment() {
                     val currentUser = mAuth.currentUser
                     val userInfo: MutableMap<String, Any> = HashMap()
                     userInfo["name"] = binding.SignUpName.text.toString()
-                    findNavController().navigate(R.id.action_register_to_main)
+                    findNavController().navigate(R.id.action_register_to_home)
                     binding.progressBar.visibility = View.GONE
 
 

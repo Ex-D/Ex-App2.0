@@ -52,7 +52,7 @@ class Login : Fragment() {
                         )
                     }!!
                     snackbar.show()
-                    findNavController().navigate(R.id.action_login_to_main)
+                    findNavController().navigate(R.id.action_login_to_home)
                     binding.progressBar.visibility=View.GONE
                 }.addOnFailureListener {
                     snackbar = view?.let { it1 ->
