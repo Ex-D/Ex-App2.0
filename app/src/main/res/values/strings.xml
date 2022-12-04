@@ -11,4 +11,5 @@
     <string name="resetInstruction">No Worries. we\'ll send you reset instruction</string>
     <string name="resetEmail">Enter Registered Email </string>
     <string name="exit_app">Exit App</string>
+    <string name="default_client">83242210429-pf8vslcva6m3gk1gpk7et15ls53ab3qo.apps.googleusercontent.com</string>
 </resources>

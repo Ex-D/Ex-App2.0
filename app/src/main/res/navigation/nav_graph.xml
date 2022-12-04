@@ -30,8 +30,7 @@
             android:id="@+id/action_login_to_home"
             app:destination="@id/apphome"
             app:popUpTo="@id/register"
-            app:popUpToInclusive="true"
-             />
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_login_to_resetPassword2"
             app:destination="@id/resetPassword" />
@@ -47,9 +46,14 @@
             app:popUpTo="@id/apphome"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_home_to_register"
+            android:id="@+id/action_apphome_to_register"
             app:destination="@id/register"
-            app:popUpTo="@id/login"
+            app:popUpTo="@id/apphome"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_apphome_to_login"
+            app:destination="@id/login"
+            app:popUpTo="@id/apphome"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -61,11 +65,5 @@
         android:id="@+id/resetPassword"
         android:name="com.example.navigation.screens.fragments.ResetPassword"
         android:label="fragment_reset_password"
-        tools:layout="@layout/fragment_reset_password" >
-        <action
-            android:id="@+id/action_resetPassword_to_login"
-            app:destination="@id/login"
-            app:popUpTo="@id/login"
-            app:popUpToInclusive="true" />
-    </fragment>
+        tools:layout="@layout/fragment_reset_password" />
 </navigation>
