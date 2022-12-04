@@ -43,6 +43,7 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"
                 android:layout_alignParentEnd="true"
+                android:maxLines="1"
                 android:layout_toEndOf="@id/atTheRate"
                 android:textColorHint="#A09898"
                 android:hint="Name"
@@ -62,6 +63,7 @@
                 />
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/SignUpEmail"
+                android:maxLines="1"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"
@@ -91,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_alignParentEnd="true"
-
+                    android:maxLines="1"
                     android:inputType="textPassword"
                     android:layout_marginStart="8dp"
                     android:layout_toEndOf="@id/rate3"
@@ -127,6 +129,7 @@
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/SignUpConfirmPassword"
                 android:layout_alignParentEnd="true"
+                android:maxLines="1"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"

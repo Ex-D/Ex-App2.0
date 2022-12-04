@@ -41,14 +41,7 @@ class Register : Fragment() {
         binding.SignupBtn.setOnClickListener {
             binding.progressBar.visibility = View.VISIBLE
             if (!isEmailFilled() or !isNameFilled() or !isPasswordFilled() or !isConfirmPasswordFilled() or !isPasswordMatch()) {
-                snackbar = view?.let { it1 ->
-                    Snackbar.make(
-                        it1,
-                        "Something went wrong!",
-                        Snackbar.LENGTH_LONG
-                    )
-                }!!
-                snackbar.show()
+                displaySnackBar("Something went wrong!")
                 binding.progressBar.visibility=View.GONE
             } else {
                 val response = registerVM.signInClient(
@@ -56,39 +49,27 @@ class Register : Fragment() {
                     binding.SignupPassword.text.toString()
                 )
                 response.addOnSuccessListener { task ->
-                    snackbar = view?.let { it1 ->
-                        Snackbar.make(
-                            it1,
-                            "Account Created Successfully",
-                            Snackbar.LENGTH_LONG
-                        )
-                    }!!
-                    snackbar.show()
+                    displaySnackBar("Account Created Successfully")
                     val currentUser = mAuth.currentUser
                     val userInfo: MutableMap<String, Any> = HashMap()
                     userInfo["name"] = binding.SignUpName.text.toString()
-                    findNavController().navigate(R.id.action_register_to_main)
+                    findNavController().navigate(R.id.action_register_to_home)
                     binding.progressBar.visibility = View.GONE
 
 
                 }.addOnFailureListener {
-                    snackbar = view?.let { it1 ->
-                        Snackbar.make(
-                            it1,
-                            "Account Creation Failed",
-                            Snackbar.LENGTH_LONG
-                        )
-                    }!!
-                    snackbar.show()
+                    displaySnackBar("Account Creation Failed")
                     binding.progressBar.visibility = View.GONE
                 }
             }
 
         }
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         return binding.root
     }
 
     private fun isNameFilled(): Boolean {
+
         val userName: String = binding.SignUpName.text.toString().trim()
         return if (userName.isEmpty()) {
             binding.SignUpName.error = "Name can not be empty"
@@ -153,18 +134,21 @@ class Register : Fragment() {
 
     private fun isPasswordMatch(): Boolean {
         return if (binding.SignupPassword.text.toString() != binding.SignUpConfirmPassword.text.toString()) {
-            snackbar = view?.let { it1 ->
-                Snackbar.make(
-                    it1,
-                    "Password Do Not Match",
-                    Snackbar.LENGTH_LONG
-                )
-            }!!
-            snackbar.show()
+           displaySnackBar("Password Do Not Match")
             false
         } else {
             true
         }
+    }
+    private fun displaySnackBar(text:String){
+        snackbar = view?.let { it1 ->
+            Snackbar.make(
+                it1,
+                text,
+                Snackbar.LENGTH_LONG
+            )
+        }!!
+        snackbar.show()
     }
 
 
@@ -172,10 +156,10 @@ class Register : Fragment() {
         super.onDestroy()
         _binding = null
     }
-    override fun onResume() {
-        super.onResume()
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-    }
+//    override fun onResume() {
+//        super.onResume()
+//
+//    }
 
 //    override fun onStop() {
 //        super.onStop()

@@ -49,6 +49,8 @@
                 />
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/LoginMail"
+                android:maxLines="1"
+                android:imeOptions="actionDone"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"
@@ -73,7 +75,9 @@
                 android:id="@+id/LoginPassword"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:imeOptions="actionDone"
                 android:inputType="textPassword"
+                android:maxLines="1"
                 android:layout_marginStart="8dp"
                 android:layout_toEndOf="@id/atTheRat"
                 android:textColorHint="#A09898"
