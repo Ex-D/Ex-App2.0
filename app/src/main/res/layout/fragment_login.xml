@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".screens.activities.MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,6 +50,8 @@
                 />
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/LoginMail"
+                android:maxLines="1"
+                android:imeOptions="actionDone"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"
@@ -73,7 +76,9 @@
                 android:id="@+id/LoginPassword"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:imeOptions="actionDone"
                 android:inputType="textPassword"
+                android:maxLines="1"
                 android:layout_marginStart="8dp"
                 android:layout_toEndOf="@id/atTheRat"
                 android:textColorHint="#A09898"
@@ -91,10 +96,12 @@
                 android:visibility="invisible"
                 android:indeterminate="true"
                 android:indeterminateTintMode="src_atop"
-                android:indeterminateTint="@color/black"
+                android:indeterminateTint="@color/AppThemeColor"
                 />
 
+
         </RelativeLayout>
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/ForgotPassword"
             android:layout_width="wrap_content"

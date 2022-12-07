@@ -5,11 +5,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.navigation.R
-import com.example.navigation.auth.viewModel.ResetPasswordVM
+import com.example.navigation.viewModels.viewModel.ResetPasswordVM
 import com.example.navigation.databinding.FragmentResetPasswordBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -58,10 +58,11 @@ class ResetPassword : Fragment() {
         }
         binding.cancelText.setOnClickListener {
 
-            findNavController().navigate(R.id.action_resetPassword_to_login)
+            findNavController().popBackStack()
 
 
         }
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
         return binding.root
     }
