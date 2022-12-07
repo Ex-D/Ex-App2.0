@@ -1,6 +1,5 @@
 package com.example.navigation.screens.fragments
 
-import android.R.attr
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
@@ -11,12 +10,11 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
-import com.example.navigation.auth.viewModel.GoogleSignInVM
-import com.example.navigation.auth.viewModel.LoginVM
+import com.example.navigation.viewModels.viewModel.GoogleSignInVM
+import com.example.navigation.viewModels.viewModel.LoginVM
 import com.example.navigation.databinding.FragmentLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -25,10 +23,7 @@ import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.oAuthCredential
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.concurrent.timerTask
-import android.R.attr.data
 import com.google.android.gms.auth.api.Auth
 
 import com.google.android.gms.auth.api.signin.GoogleSignInResult
@@ -81,6 +76,7 @@ class Login : Fragment() {
             }
         }
         binding.gSignIn.setOnClickListener {
+            binding.progressBar.visibility = View.VISIBLE
             signInGoogle()
         }
         binding.ForgotPassword.setOnClickListener {
@@ -103,13 +99,11 @@ class Login : Fragment() {
             val id: GoogleSignInResult? = result.data?.let {
                 Auth.GoogleSignInApi.getSignInResultFromIntent(it)
             }
-            Log.d("resultcode","$id")
             val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-            Log.d("task22","$task")
             handleResult(task)
         }else{
-            Toast.makeText(context, "Somethign went wrong", Toast.LENGTH_SHORT).show()
-            Log.d("resultcodeexception","${result.resultCode}")
+            binding.progressBar.visibility = View.GONE
+            Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -120,6 +114,7 @@ class Login : Fragment() {
             if (account != null) {
                 updateUi(account)
             } else {
+                binding.progressBar.visibility = View.GONE
                 Toast.makeText(context, task.exception.toString(), Toast.LENGTH_SHORT).show()
             }
         }
@@ -131,9 +126,11 @@ class Login : Fragment() {
 
         mAuth.signInWithCredential(credential).addOnCompleteListener { task->
             if (task.isSuccessful){
+                binding.progressBar.visibility = View.GONE
                 displaySnackBar("Signed In Successfully :)")
                 findNavController().navigate(R.id.action_login_to_home)
             }else{
+                binding.progressBar.visibility = View.GONE
                 Toast.makeText(context, "Something Went Wrong", Toast.LENGTH_SHORT).show()
             }
         }
