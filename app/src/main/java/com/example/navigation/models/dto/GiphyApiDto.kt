@@ -1,6 +1,6 @@
 package com.example.navigation.models.dto
 
 data class GiphyApiDto(
-    val `data`: Data,
+    val `data`: List<Data>,
     val meta: Meta
 )
