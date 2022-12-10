@@ -85,5 +85,12 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
 
+    implementation 'com.squareup.picasso:picasso:2.8'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
+
+    //paging
+    def paging_version = "3.1.1"
+
+    implementation "androidx.paging:paging-runtime:$paging_version"
 
 }

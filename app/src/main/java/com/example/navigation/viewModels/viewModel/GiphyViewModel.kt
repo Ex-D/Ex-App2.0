@@ -33,7 +33,7 @@ class GiphyViewModel @Inject constructor(
                 response->
                 if(response.isSuccessful){
                     Log.d("getgifs","${response.body()!!.data}")
-//                    _resp.postValue(response.body()!!.data)
+                    _resp.postValue(response.body()!!.data)
                 }else{
                     Toast.makeText(app, "Something Went Wrong :(", Toast.LENGTH_SHORT).show()
                 }

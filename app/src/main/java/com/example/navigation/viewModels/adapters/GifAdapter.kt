@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.DrawableImageViewTarget
 import com.example.navigation.R
 import com.example.navigation.models.dto.Data
+
 
 class GifAdapter:RecyclerView.Adapter<GifAdapter.GifViewHolder>() {
     private val items = mutableListOf<Data>()
@@ -21,8 +25,13 @@ class GifAdapter:RecyclerView.Adapter<GifAdapter.GifViewHolder>() {
 
     override fun onBindViewHolder(holder: GifViewHolder, position: Int) {
         val currentItem = items[position]
-        Glide.with(holder.itemView.context).load(currentItem.embed_url).into(holder.gif)
-        Glide.with(holder.itemView.context).load(currentItem.user.avatar_url).into(holder.UserImage)
+//        val avatar_url = currentItem.user.avatar_url
+        Glide.with(holder.itemView.context)
+            .load(currentItem.images.preview_gif.url)
+            .into(holder.gif);
+//        Glide.with(holder.itemView.context).asGif().load("https://giphy.com/embed/cBnSvKscZProc").into(holder.gif)
+        Log.d("Avatarurl",currentItem.toString())
+//        Glide.with(holder.itemView.context).load(currentItem.user.profile_url).into(holder.UserImage)
     }
 
     override fun getItemCount(): Int {
@@ -37,7 +46,7 @@ class GifAdapter:RecyclerView.Adapter<GifAdapter.GifViewHolder>() {
 
     class GifViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
         val gif = itemView.findViewById<ImageView>(R.id.tv_Image)
-        val UserImage =itemView.findViewById<ImageView>(R.id.usr_img)
+        val UserImage:ImageView =itemView.findViewById(R.id.usr_img)
     }
 
 }
