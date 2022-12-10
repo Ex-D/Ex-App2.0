@@ -5,7 +5,8 @@ package com.example.navigation.screens.activities
 //Update 3 -- 28-11-22 -- 10:02 AM (Login and Sign Up done with Firebase)
 //update 4 -- 29-11-22 -- 16:41 navigation (some issues left like after  exiting the app when backbutton pressed)
 //update 5 -- 04-12-22 -- 11:47 navigation resolved!
-//update 6 -- 07-12-22 -- 12:44 Giphy Api Integrated ! Ui display left
+//update 6 -- 07-12-22 -- 12:44 Giphy Api Integrated ! Ui display left (resolved 8-12-2022)
+//update 7 -- 10-12-22 -- 14:16 Paging Added
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
