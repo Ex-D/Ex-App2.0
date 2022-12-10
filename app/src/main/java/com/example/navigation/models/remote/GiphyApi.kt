@@ -10,7 +10,8 @@ interface GiphyApi {
     suspend fun getGifs(
         @Query("api_key") key:String=Constants.apiKey,
         @Query("q")q:String = "flower",
-        @Query("limit")limit:Int = 150,
+        @Query("limit")limit:Int = 0,
+        @Query("offset")offset:Int = 0,
     ): Response<GiphyApiDto>
 
 }

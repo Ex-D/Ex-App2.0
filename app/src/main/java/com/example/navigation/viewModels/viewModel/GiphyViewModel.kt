@@ -13,7 +13,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
+
 class GiphyViewModel @Inject constructor(
     private val repo:GiphyRepository,
     private val app:Application
@@ -29,7 +29,7 @@ class GiphyViewModel @Inject constructor(
 
     private fun getGiphy() =
         viewModelScope.launch {
-            repo.getGifs().let {
+            repo.getGifs(50,100).let {
                 response->
                 if(response.isSuccessful){
                     Log.d("getgifs","${response.body()!!.data}")
