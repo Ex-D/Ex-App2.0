@@ -48,59 +48,59 @@
         </LinearLayout>
 
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            >
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            >-->
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                >-->
 
-                <TextView
-                    android:id="@+id/viewstext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="17dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:fontFamily="@font/mochiy"
-                    android:gravity="center"
-                    android:text="15" />
-            </LinearLayout>
+<!--                <TextView-->
+<!--                    android:id="@+id/viewstext"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginStart="17dp"-->
+<!--                    android:layout_marginTop="0dp"-->
+<!--                    android:layout_marginEnd="15dp"-->
+<!--                    android:layout_marginBottom="15dp"-->
+<!--                    android:fontFamily="@font/mochiy"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="15" />-->
+<!--            </LinearLayout>-->
 
-            <ImageView
-                android:id="@+id/like1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+<!--            <ImageView-->
+<!--                android:id="@+id/like1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
 
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="15dp"
-                android:src="@drawable/like" />
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_marginStart="0dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:layout_marginEnd="8dp"-->
+<!--                android:layout_marginBottom="15dp"-->
+<!--                android:src="@drawable/like" />-->
 
-            <ImageView
-                android:id="@+id/comment"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="15dp"
-                android:layout_toEndOf="@+id/like1"
-                android:src="@drawable/comment" />
+<!--            <ImageView-->
+<!--                android:id="@+id/comment"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_marginStart="0dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:layout_marginBottom="15dp"-->
+<!--                android:layout_toEndOf="@+id/like1"-->
+<!--                android:src="@drawable/comment" />-->
 
 
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
     </androidx.cardview.widget.CardView>
 
 

@@ -1,6 +1,7 @@
 package com.example.navigation.screens.fragments
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import com.example.navigation.R
 import com.example.navigation.viewModels.viewModel.GoogleSignInVM
 import com.example.navigation.viewModels.viewModel.LoginVM
 import com.example.navigation.databinding.FragmentLoginBinding
+import com.example.navigation.screens.activities.HomeActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -128,7 +130,7 @@ class Login : Fragment() {
             if (task.isSuccessful){
                 binding.progressBar.visibility = View.GONE
                 displaySnackBar("Signed In Successfully :)")
-                findNavController().navigate(R.id.action_login_to_home)
+                startActivity(Intent(activity,HomeActivity::class.java))
             }else{
                 binding.progressBar.visibility = View.GONE
                 Toast.makeText(context, "Something Went Wrong", Toast.LENGTH_SHORT).show()

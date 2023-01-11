@@ -6,7 +6,11 @@ package com.example.navigation.screens.activities
 //update 4 -- 29-11-22 -- 16:41 navigation (some issues left like after  exiting the app when backbutton pressed)
 //update 5 -- 04-12-22 -- 11:47 navigation resolved!
 //update 6 -- 07-12-22 -- 12:44 Giphy Api Integrated ! Ui display left
+//update 7 -- 29-12-22 -- Camera Implemented
+//update 8 -- 12-01-2023 -- Camera with Zoom in and Preview Feature Implemented
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.findNavController
@@ -31,12 +35,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        if(mAuth.currentUser!=null){
-            val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-            val navController = navHostFragment.navController
-            navController.navigate(R.id.apphome)
-
-        }
+//        if(mAuth.currentUser!=null){
+//            val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+//            val navController = navHostFragment.navController
+//            navController.navigate(R.id.apphome)
+//        }
+        startActivity(Intent(this,HomeActivity::class.java))
 
     }
 
