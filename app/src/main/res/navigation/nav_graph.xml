@@ -39,7 +39,7 @@
         android:id="@+id/apphome"
         android:name="com.example.navigation.screens.fragments.Home"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_gifpage" >
         <action
             android:id="@+id/action_home_to_note"
             app:destination="@id/note"

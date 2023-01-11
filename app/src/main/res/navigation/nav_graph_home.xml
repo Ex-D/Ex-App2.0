@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/note2">
+
+    <fragment
+        android:id="@+id/note2"
+        android:name="com.example.navigation.screens.fragments.Note"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" />
+    <fragment
+        android:id="@+id/resetPassword2"
+        android:name="com.example.navigation.screens.fragments.ResetPassword"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" />
+    <fragment
+        android:id="@+id/register2"
+        android:name="com.example.navigation.screens.fragments.Register"
+        android:label="Register" />
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.navigation.screens.fragments.Home"
+        android:label="fragment_gifpage"
+        tools:layout="@layout/fragment_gifpage" />
+</navigation>

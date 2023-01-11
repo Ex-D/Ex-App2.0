@@ -9,8 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.navigation.R
-import com.example.navigation.auth.viewModel.ResetPasswordVM
+import com.example.navigation.viewModels.viewModel.ResetPasswordVM
 import com.example.navigation.databinding.FragmentResetPasswordBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -63,7 +62,7 @@ class ResetPassword : Fragment() {
 
 
         }
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
         return binding.root
     }

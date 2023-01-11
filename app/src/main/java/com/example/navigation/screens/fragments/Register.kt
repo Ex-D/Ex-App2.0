@@ -1,17 +1,15 @@
 package com.example.navigation.screens.fragments
 
-import android.R.attr.password
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
-import com.example.navigation.auth.viewModel.RegisterVM
+import com.example.navigation.viewModels.viewModel.RegisterVM
 import com.example.navigation.databinding.FragmentRegisterBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -64,7 +62,7 @@ class Register : Fragment() {
             }
 
         }
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         return binding.root
     }
 
