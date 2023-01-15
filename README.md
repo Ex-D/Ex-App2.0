@@ -7,6 +7,7 @@ An App that let you explore and Downloads latest , trending Gifs along with crea
 Technoligies Used </h2>
 
 - Firebase
+- MVVM
 - Retrofit
 - Dependency Injection
 - Coroutines
@@ -15,6 +16,7 @@ Technoligies Used </h2>
 - CameraX
 - Dagger Hilt
 - Live Data
+- Nav Graphs
 - More to come...
 
 
