@@ -91,6 +91,10 @@ class Camera : Fragment() {
 //                        }
 //                    }
 //                )
+
+
+                //here is code 1
+
             }
         }
 
