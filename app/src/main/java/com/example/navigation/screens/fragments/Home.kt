@@ -40,7 +40,7 @@ class Home : Fragment() {
         _binding = FragmentGifpageBinding.inflate(inflater, container, false)
         imageRecycler = binding.recyclerView
         adapter = GifPagingAdapter()
-        imageRecycler.layoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
+        imageRecycler.layoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.HORIZONTAL)
         imageRecycler.adapter = adapter
         giphyViewModel = ViewModelProvider(this)[GiphyPagingViewModel::class.java]
         getGifs()

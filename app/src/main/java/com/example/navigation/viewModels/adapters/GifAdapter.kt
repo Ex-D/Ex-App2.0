@@ -7,9 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.request.RequestOptions
-import com.bumptech.glide.request.target.DrawableImageViewTarget
 import com.example.navigation.R
 import com.example.navigation.models.dto.Data
 
@@ -19,7 +16,7 @@ class GifAdapter:RecyclerView.Adapter<GifAdapter.GifViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GifViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.gifsdisplaypattern,parent,false)
+        val view = inflater.inflate(R.layout.gif_parent,parent,false)
         return GifViewHolder(view)
     }
 
@@ -46,7 +43,7 @@ class GifAdapter:RecyclerView.Adapter<GifAdapter.GifViewHolder>() {
 
     class GifViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
         val gif = itemView.findViewById<ImageView>(R.id.tv_Image)
-        val UserImage:ImageView =itemView.findViewById(R.id.usr_img)
+//        val UserImage:ImageView =itemView.findViewById(R.id.usr_img)
     }
 
 }
