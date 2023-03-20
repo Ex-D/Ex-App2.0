@@ -30,17 +30,19 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.hide()
         mAuth = FirebaseAuth.getInstance()
     }
 
     override fun onStart() {
         super.onStart()
-//        if(mAuth.currentUser!=null){
+        if(mAuth.currentUser!=null){
 //            val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 //            val navController = navHostFragment.navController
 //            navController.navigate(R.id.apphome)
-//        }
-        startActivity(Intent(this,HomeActivity::class.java))
+                    startActivity(Intent(this,HomeActivity::class.java))
+        }
+
 
     }
 

@@ -17,6 +17,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        renderscriptTargetApi 21
+//        renderscriptSupportModeEnabled true
     }
 
     buildTypes {
@@ -101,5 +103,32 @@ dependencies {
     implementation "androidx.camera:camera-view:${camerax_version}"
     implementation "androidx.camera:camera-extensions:${camerax_version}"
     implementation "androidx.camera:camera-camera2:${camerax_version}"
+
+    //Lottie animations
+    def lottieVersion = "5.2.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+//
+//    // DS Photo Editor SDK
+//
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//
+//    implementation(name:'ds-photo-editor-sdk-v10', ext:'aar')
+//
+//
+//    // SDK related dependencies
+//
+//    implementation 'androidx.appcompat:appcompat:1.6.0'
+//
+//    implementation 'io.reactivex.rxjava2:rxjava:2.2.15'
+//
+//    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //remove background
+    implementation 'com.github.GhayasAhmad:auto-background-remover:1.0.3'
+
+    //photo Editor
+    implementation 'com.burhanrashid52:photoeditor:2.0.0'
+
 
 }

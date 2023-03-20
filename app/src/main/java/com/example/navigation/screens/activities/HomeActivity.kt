@@ -53,9 +53,11 @@ import java.util.concurrent.Executors
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
     private lateinit var _binding: ActivityTestactivityBinding
+    private lateinit var customDialog: Dialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityTestactivityBinding.inflate(layoutInflater)
+        customDialog = Dialog(this)
         setContentView(_binding.root)
         val bottomNavigationView =
             findViewById<BottomNavigationView>(com.example.navigation.R.id.bottomNavigationView)
@@ -71,7 +73,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun showDialog() {
         //end the dialog when it is on resumed
-        val customDialog = Dialog(this)
         customDialog.setContentView(com.example.navigation.R.layout.creategifdialog)
         val dismissGifDialog = customDialog.findViewById<ImageView>(R.id.dismissGifDialog)
         val startCameraDialog = customDialog.findViewById<Button>(R.id.gifCamera)
@@ -91,6 +92,11 @@ class HomeActivity : AppCompatActivity() {
         dismissGifDialog.setOnClickListener {
             customDialog.dismiss()
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        customDialog.dismiss()
     }
 
 

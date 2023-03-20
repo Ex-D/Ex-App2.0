@@ -4,15 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.appcompat.view.menu.MenuView.ItemView
-import androidx.paging.PagingData
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.navigation.R
 import com.example.navigation.models.dto.Data
-import com.example.navigation.viewModels.adapters.GifAdapter
 
 class GifPagingAdapter : PagingDataAdapter<Data, GifPagingAdapter.GifPagingViewHolder>(COMPARATOR) {
 
@@ -43,7 +40,7 @@ class GifPagingAdapter : PagingDataAdapter<Data, GifPagingAdapter.GifPagingViewH
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GifPagingViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.gifsdisplaypattern,parent,false)
+        val view = inflater.inflate(R.layout.gif_parent,parent,false)
         return GifPagingAdapter.GifPagingViewHolder(view)
     }
 }

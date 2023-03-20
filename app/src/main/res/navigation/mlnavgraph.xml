@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mlnavgraph"
+    app:startDestination="@id/camera2">
+
+    <fragment
+        android:id="@+id/camera2"
+        android:name="com.example.navigation.screens.fragments.Camera"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
+</navigation>

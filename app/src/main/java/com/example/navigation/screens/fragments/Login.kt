@@ -95,12 +95,14 @@ class Login : Fragment() {
     }
     private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         result->
+        Log.d("handleresult","${result}")
         // to be  solved ...
-        //02-12-22 01:50 AM signinclientissue
+        //02-12-22 01:50 AM signinclientissue //solved
         if(result.resultCode == Activity.RESULT_OK){
             val id: GoogleSignInResult? = result.data?.let {
                 Auth.GoogleSignInApi.getSignInResultFromIntent(it)
             }
+
             val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
             handleResult(task)
         }else{
