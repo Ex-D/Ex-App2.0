@@ -8,6 +8,7 @@ package com.example.navigation.screens.activities
 //update 6 -- 07-12-22 -- 12:44 Giphy Api Integrated ! Ui display left
 //update 7 -- 29-12-22 -- Camera Implemented
 //update 8 -- 12-01-2023 -- Camera with Zoom in and Preview Feature Implemented
+//update 9 -- 29-03-2023 -- Project Reiniated
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
