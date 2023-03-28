@@ -8,17 +8,6 @@
     tools:context=".screens.fragments.Camera"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-<!--    <com.airbnb.lottie.LottieAnimationView-->
-<!--        android:id="@+id/animationView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:lottie_rawRes="@raw/background"-->
-<!--        android:foreground="@drawable/googlelogo"-->
-<!--        app:lottie_autoPlay="true"-->
-<!--        app:lottie_loop="true"-->
-<!--        android:layout_gravity="center"-->
-<!--        />-->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/ll"
         android:layout_width="wrap_content"
@@ -30,24 +19,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
-        <ja.burhanrashid52.photoeditor.PhotoEditorView
-            android:id="@+id/photoEditorView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:photo_src="@drawable/jony"
-            />
 
-<!--        <androidx.appcompat.widget.AppCompatImageView-->
-<!--            android:id="@+id/gifImage"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:src="@drawable/giftbees"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            />-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/gifImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/giftbees"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <Button
@@ -60,10 +43,5 @@
         app:layout_constraintTop_toBottomOf="@+id/ll"
         android:text="remove"
         />
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
