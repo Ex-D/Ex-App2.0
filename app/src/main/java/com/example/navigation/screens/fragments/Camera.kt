@@ -15,9 +15,11 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.navigation.R
 import com.example.navigation.databinding.FragmentCameraBinding
+import com.example.navigation.viewModels.viewModel.MlGifViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.slowmac.autobackgroundremover.BackgroundRemover
 import com.slowmac.autobackgroundremover.OnBackgroundChangeListener
@@ -37,9 +39,7 @@ class Camera : Fragment() {
     private lateinit var intent: Intent
     private lateinit var uri: Uri
     private lateinit var snackbar: Snackbar
-    private lateinit var bitmap: Bitmap
-    private lateinit var contentResolver: ContentResolver
-    private lateinit var matrix: Matrix
+    private lateinit var mlGifViewModel: MlGifViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,39 +47,26 @@ class Camera : Fragment() {
 
     ): View {
         intent = requireActivity().intent
-
+        mlGifViewModel = ViewModelProvider(this)[MlGifViewModel::class.java]
         uri = intent.getStringExtra("imageUri")?.toUri()!!
         _binding = FragmentCameraBinding.inflate(inflater, container, false)
-        removeBg(uri)
 
+        mlGifViewModel.getRemovedPhoto(uri,requireContext())
+        lifecycleScope.launch {
+            mlGifViewModel.mainEvent.collect() { event ->
+                when (event) {
+                    is MlGifViewModel.MainEvent.SetGifImageBitmap -> {
+                        binding.gifImage.setImageBitmap(event.bitmap)
+                    }
+                    is MlGifViewModel.MainEvent.ShowSnackBar -> {
+                        displaySnackBar("Failed to remove background")
+                    }
+                }
+            }
+        }
         return binding.root
     }
 
-    private fun removeBg(uri: Uri){
-        lifecycleScope.launch(Dispatchers.IO){
-            val newbitmap:Bitmap? = getBitmap(uri)
-            if (newbitmap != null) {
-                BackgroundRemover.bitmapForProcessing(
-                    newbitmap,
-                    true,
-                    object: OnBackgroundChangeListener {
-                        override fun onSuccess(bitmap: Bitmap) {
-                            //bitmap
-                            binding.gifImage.setImageBitmap(bitmap)
-                        }
-                        override fun onFailed(exception: Exception) {
-                            displaySnackBar("Failed to remove background")
-                        }
-                    }
-                )
-            }
-        }
-    }
-
-    fun getBitmap(uri: Uri): Bitmap? {
-        val inputStream: InputStream? = activity?.contentResolver?.openInputStream(uri)
-        return BitmapFactory.decodeStream(inputStream)
-    }
 
     private fun displaySnackBar(text:String){
         snackbar = view?.let { it1 ->
